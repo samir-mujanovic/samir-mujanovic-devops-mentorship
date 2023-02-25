@@ -16,4 +16,4 @@ $ grep #print lines that match patterns
 
 ###### Bandit10 screenshot
 
-![Screenshot](bandit10.png)
+![Screenshot](../bandit10.png)
