@@ -54,7 +54,7 @@
             $ crontab -e # otvaranje crontaba fajla
             0 12 * * * /usr/bin/certbot renew --quiet #zatim sam dodao ovu komandu koja ce provjeravati da li certifikat istica za 30 dana, ako da uradit ce autorenewal certifikata , --quite direktiva govori certbot da ne generise outpu.
         ```
-
+        ![screenshot-1](./screenshots/crontab.png)
     - [x] Koristeci openssl komande prikazati koji SSL certitikat koristite i datum njegovog isteka.
 
         ```Komande koje sam koristio:``` 
