@@ -97,7 +97,7 @@
 
     - [x] Kreirajte novi SSL certifikat unutar AWS Certified Managera, azurirajte ALB da koristi novi SSL cert koji ste kreirali.
 
-        ![screenshot-1](./screenshots/aws-issued-cert.png)
+        ![screenshot-1](./screenshots/certificates.png)
 
         Load Balancer
 
