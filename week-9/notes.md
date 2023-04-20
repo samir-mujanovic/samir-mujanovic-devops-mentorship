@@ -103,6 +103,10 @@
 
         ![screenshot-1](./screenshots/alb-certificate.png)
 
+        Browser certificate
+
+        ![screenshot-1](./screenshots/aws-browser-cert.png)
+
     - [x] Koristeci openssl komande prikazati koji SSL certitikat koristite za vasu domenu i datum njegovog isteka.
         
         Dates
