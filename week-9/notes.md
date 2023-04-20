@@ -111,11 +111,19 @@
         
         Dates
 
+        ```bash 
+        $ openssl s_client -showcerts -connect samir-mujanovic.awsbosnia.com:443 2>/dev/null | openssl x509 -noout -dates # komanda koristena za prikaz datuma certificate validity
+        ```
+
         ![screenshot-1](./screenshots/aws-cert-issued-dates.png)
 
         SSL aws certifikat
 
-        ![screenshot-1](./screenshots/amazon-certificate-issued.png)
+        ```bash
+        $ openssl s_client -showcerts -connect samir-mujanovic.awsbosnia.com:443 #komanda koristena za prikaz informacija o certifikatu
+        ```
+
+        ![screenshot-1](./screenshots/aws-cmd-cert.png)
 
     - [x] Kada zavrsite sa taskom kreirajte AMI image pod nazivom ami-ec2-ime-prezime-task-8 i terminirajte resurse koje ste koristili za izradu taska.
 
