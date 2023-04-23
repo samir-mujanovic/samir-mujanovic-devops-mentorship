@@ -1,4 +1,4 @@
-### TASK-8: Implement SSL Let's Encrypt, migrate to AWS SSM
+### TASK-8: Implement SSL Let's Encrypt, migrate to AWS ACM
 
 - Tasks:
     - [x] Od AMI image ec2-ime-prezime-web-server napravite novu EC2 instancu ec2-ime-prezime-task-8
