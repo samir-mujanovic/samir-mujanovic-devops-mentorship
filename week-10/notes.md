@@ -12,8 +12,6 @@
 
     - [x] Screenshot - S3 website endpointa,
 
-        [http://samir-mujanovic-devops-mentorship-program.s3-website.eu-central-1.amazonaws.com](http://samir-mujanovic-devops-mentorship-program.s3-website.eu-central-1.amazonaws.com)
-
         ![screenshot-1](./screenshots/s3-website-endpoint.png)
 
     - [x] Screenshot - distribution endpointa,
