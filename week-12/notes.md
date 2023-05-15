@@ -1,7 +1,5 @@
 ## TASK-10: Serverless and Application Services
 
-<br>
-
 - ### What is serverless? : 
     - Serverless is a new paradigm in which the developers don’t have to manage servers anymore
     - Initially Serverless == FaaS (Function as a Service)
