@@ -63,6 +63,13 @@ resource "aws_security_group" "db_server_tf_sg" {
     cidr_blocks     = [var.default_cidr_block]
   }
 
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [var.default_cidr_block]
+  }
+
   egress {
     from_port       = 0
     to_port         = 0
@@ -83,6 +90,8 @@ resource "aws_instance" "web_server_tf" {
   ami           = var.ami_id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.web_server_tf_sg.id]
+  key_name      = "samir-mujanovic-web-server-key"
+
   tags = {
     Name        = "task-12-web-server-tf"
     CreatedBy   = var.tag_name
@@ -95,6 +104,8 @@ resource "aws_instance" "db_server_tf" {
   ami           = var.ami_id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.db_server_tf_sg.id]
+  key_name      = "samir-mujanovic-web-server-key"
+  
   tags = {
     Name        = "task-12-db-server-tf"
     CreatedBy   = var.tag_name
