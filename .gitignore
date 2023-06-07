@@ -1,1 +1,8 @@
 .vscode/*
+
+# local .terraform dir
+**/.terraform/*
+
+# tf state file
+*.tfstate
+*.tfstate.*

@@ -1,0 +1,70 @@
+Resources:
+  WebServerCF:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0af421fbd663efcac
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - !Ref WebServerCFSecurityGroup
+      Tags:
+        - Key: Name
+          Value: task-12-web-server-cf
+        - Key: CreatedBy
+          Value: Samir Mujanovic
+        - Key: Project
+          Value: task-12
+        - Key: IaC
+          Value: CloudFormation
+
+  DBServerCF:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0af421fbd663efcac
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - !Ref DBServerCFSecurityGroup
+      Tags:
+        - Key: Name
+          Value: task-12-db-server-cf
+        - Key: CreatedBy
+          Value: Samir Mujanovic
+        - Key: Project
+          Value: task-12
+        - Key: IaC
+          Value: CloudFormation
+
+  WebServerCFSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for the web server instance created by CloudFormation
+      VpcId: vpc-0d182d3a5b052a785
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          FromPort: 0
+          ToPort: 0
+          CidrIp: 0.0.0.0/0
+
+  DBServerCFSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for the database server instance created by CloudFormation
+      VpcId: vpc-0d182d3a5b052a785
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          FromPort: 0
+          ToPort: 0
+          CidrIp: 0.0.0.0/0

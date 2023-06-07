@@ -1,0 +1,17 @@
+{
+    "builders": [{
+      "type": "amazon-ebs",
+      "region": "eu-central-1",
+      "source_ami": "ami-07151644aeb34558a",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "temporary_key_pair_type": "ed25519",
+      "ami_name": "packer-ami-task-12"
+    }],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "./ec2-user-data.sh"  
+        }
+    ]
+}
