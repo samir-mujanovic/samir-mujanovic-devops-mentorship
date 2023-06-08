@@ -1,0 +1,41 @@
+---
+- name: Configure web server
+  hosts: webservers
+  become: yes
+  vars:
+    server_content_map:
+      52.28.233.82: "Hello from nginx web server created using CloudFormation and Ansible"
+      3.66.232.97: "Hello from nginx web server created using Terrafrom and Ansible"
+  tasks:
+    - name: Install nginx server
+      dnf:
+        name: nginx
+        state: latest
+
+    - name: Create index.html file with dynamic content
+      copy:
+        content: "{{ server_content_map[inventory_hostname] }}"
+        dest: /usr/share/nginx/html/index.html
+      notify:
+        - Reload Nginx
+
+    - name: Start nginx server
+      service:  
+        name: nginx
+        state: started
+
+    - name: Enable nginx server
+      service:
+        name: nginx
+        enabled: yes
+
+    - name: Install telnet
+      dnf:
+        name: telnet
+        state: present
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
